@@ -37,7 +37,11 @@ const RootNavigator = () => {
   return (
     <Navigator>
       <Screen name="AllNotes" component={AllNote} />
-      <Screen name="ViewNote" component={ViewNote} />
+      <Screen
+        name="ViewNote"
+        component={ViewNote}
+        options={({ route }) => ({ title: route.params?.note?.title })}
+      />
       <Screen name="AddNote" component={AddNote} />
     </Navigator>
   );
