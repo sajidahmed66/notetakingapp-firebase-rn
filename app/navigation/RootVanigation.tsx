@@ -8,8 +8,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import AddNote from "../screens/AddNote";
 import AllNote from "../screens/AllNotes";
-import Login from "../screens/LogIn";
-import Register from "../screens/Register";
 import ViewNote from "../screens/ViewNote";
 
 //
@@ -26,8 +24,6 @@ export type RootStackParam = {
   AllNotes: undefined;
   AddNote: undefined;
   ViewNote: undefined | any;
-  Login: undefined;
-  SignUp: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParam>();
