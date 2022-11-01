@@ -4,25 +4,22 @@ import {
   Text,
   KeyboardAvoidingView,
   StyleSheet,
-  Dimensions,
   TextInput,
   TouchableOpacity,
   Alert,
 } from "react-native";
-import styled from "styled-components/native";
-const { width, height } = Dimensions.get("window");
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { app } from "../../../config/firebaseConfig";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParam } from "../../navigation/RootVanigation";
-
-const AddnoteContainer = styled.View`
-  flex: 1;
-  padding: 10px;
-  width: ${width}px;
-  justify-content: flex-start;
-  background-color: "#FFF8EA";
-`;
+import {
+  AddNoteBtn,
+  AddnoteContainer,
+  AddNoteInput,
+  BtnContainer,
+  GoBackBtn,
+  HeaderTextAddNote,
+} from "./styled";
 
 type AddnoteProps = NativeStackScreenProps<RootStackParam, "AddNote">;
 
@@ -50,81 +47,39 @@ const AddNote: React.FC<AddnoteProps> = ({ navigation }) => {
   return (
     <AddnoteContainer>
       <KeyboardAvoidingView>
-        <Text style={styles.headerText}>Add Note </Text>
-        <TextInput
-          style={styles.titleinput}
+        <HeaderTextAddNote>Add Note </HeaderTextAddNote>
+        <AddNoteInput
           placeholder="enter title"
           multiline
           value={title}
-          onChangeText={(e) => {
+          onChangeText={(e: string) => {
             setTitle(e);
           }}
         />
-        <TextInput
-          style={styles.titleinput}
+        <AddNoteInput
           placeholder="Note Details"
           multiline
           value={details}
-          onChangeText={(e) => {
+          onChangeText={(e: string) => {
             setDetails(e);
           }}
         />
-        <View style={styles.btnsContainter}>
+        <BtnContainer>
           <TouchableOpacity onPress={() => addNoteHandler()}>
-            <View style={styles.addbtn}>
+            <AddNoteBtn>
               <Text>Add Note</Text>
-            </View>
+            </AddNoteBtn>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.replace("AllNotes")}>
-            <View style={styles.gobkbtn}>
+            <GoBackBtn>
               <Text>Go Back To Home</Text>
-            </View>
+            </GoBackBtn>
           </TouchableOpacity>
-        </View>
+        </BtnContainer>
       </KeyboardAvoidingView>
     </AddnoteContainer>
   );
 };
 
 export default AddNote;
-
-const styles = StyleSheet.create({
-  titleinput: {
-    width: "90%",
-    marginHorizontal: 10,
-    borderColor: "black",
-    borderRadius: 5,
-    borderWidth: 2,
-    marginVertical: 10,
-    // height: 50,
-    padding: 15,
-    // backgroundColor: "#FFF8EA",
-  },
-  headerText: {
-    height: 50,
-    fontSize: 18,
-    fontWeight: "bold",
-    paddingLeft: 10,
-  },
-  btnsContainter: {
-    height: 75,
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    paddingVertical: 12,
-  },
-  addbtn: {
-    height: "100%",
-    backgroundColor: "#90A17D",
-    borderRadius: 15,
-    padding: 15,
-  },
-  gobkbtn: {
-    height: "100%",
-    backgroundColor: "#FFE1E1",
-    borderRadius: 15,
-    padding: 15,
-  },
-});
