@@ -31,8 +31,8 @@ export const NoteDetailsView = styled.View`
 
 export const NoteDetailsText = styled.Text`
   font-size: 15px;
-  /* font-weight: bold; */
   color: #e7f6f2;
+  line-height: 22px;
 `;
 
 export const GobacktoHome = styled.TouchableOpacity`
