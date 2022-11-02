@@ -4,7 +4,6 @@ import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 export const Containter = styled.View`
   flex: 1;
-  /* height: height, */
   width: ${width}px;
   padding: 10px;
   position: relative;
@@ -32,13 +31,11 @@ export const NoteCard = styled.View`
   border-width: 2px;
   margin-bottom: 10px;
   padding: 0px 30px;
-  /* background-color: #9e7676; */
 `;
 
 export const NoteCardTitle = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  /* padding-left: 10px; */
   color: #e7f6f2;
 `;
 
@@ -59,7 +56,6 @@ export const Fab = styled.View`
   width: 70px;
   border-radius: 35px;
   background-color: #dee2e3;
-  /* overflow: hidden; */
   flex: 1;
   align-items: center;
   justify-content: center;

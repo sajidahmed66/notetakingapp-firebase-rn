@@ -53,7 +53,6 @@ export const GoBackBtn = styled.View`
   background-color: #7d6e83;
   border-radius: 15px;
   padding: 15px;
-  /* color: " #e7f6f2"; */
 `;
 
 export const BtnText = styled.Text`
