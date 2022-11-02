@@ -9,7 +9,7 @@ export const Containter = styled.View`
   padding: 10px;
   position: relative;
   padding-top: 20px;
-  background-color: "#FFF8EA";
+  background-color: #404258;
 `;
 
 export const HeaderText = styled.Text`
@@ -17,6 +17,7 @@ export const HeaderText = styled.Text`
   font-size: 18px;
   font-weight: bold;
   padding-left: 10px;
+  color: #e7f6f2;
 `;
 
 export const NoteCard = styled.View`
@@ -27,11 +28,18 @@ export const NoteCard = styled.View`
   align-items: center;
   justify-content: space-between;
   border-radius: 15px;
-  border-color: gray;
+  border-color: #6b728e;
   border-width: 2px;
   margin-bottom: 10px;
   padding: 0px 30px;
-  background-color: #9e7676;
+  /* background-color: #9e7676; */
+`;
+
+export const NoteCardTitle = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  /* padding-left: 10px; */
+  color: #e7f6f2;
 `;
 
 export const TouchableTextTitle = styled.TouchableOpacity`

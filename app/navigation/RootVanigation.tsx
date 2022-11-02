@@ -1,3 +1,4 @@
+import { HeaderBackground } from "@react-navigation/elements";
 import {
   NavigationContainer,
   DefaultTheme,
@@ -32,13 +33,40 @@ const RootNavigator = () => {
   const { Navigator, Screen } = Stack;
   return (
     <Navigator>
-      <Screen name="AllNotes" component={AllNote} />
+      <Screen
+        name="AllNotes"
+        component={AllNote}
+        options={{
+          headerTitleAlign: "center",
+          headerTintColor: "#E7F6F2",
+          headerBackground: () => (
+            <HeaderBackground style={{ backgroundColor: "#474E68" }} />
+          ),
+        }}
+      />
       <Screen
         name="ViewNote"
         component={ViewNote}
-        options={({ route }) => ({ title: route.params?.note?.title })}
+        options={({ route }) => ({
+          title: route.params?.note?.title,
+          headerTitleAlign: "center",
+          headerTintColor: "#E7F6F2",
+          headerBackground: () => (
+            <HeaderBackground style={{ backgroundColor: "#474E68" }} />
+          ),
+        })}
       />
-      <Screen name="AddNote" component={AddNote} />
+      <Screen
+        name="AddNote"
+        component={AddNote}
+        options={{
+          headerTitleAlign: "center",
+          headerTintColor: "#E7F6F2",
+          headerBackground: () => (
+            <HeaderBackground style={{ backgroundColor: "#474E68" }} />
+          ),
+        }}
+      />
     </Navigator>
   );
 };

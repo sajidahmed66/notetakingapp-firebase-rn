@@ -8,7 +8,7 @@ export const AddnoteContainer = styled.View`
   padding: 10px;
   width: ${width}px;
   justify-content: flex-start;
-  background-color: #fff8ea;
+  background-color: #404258;
 `;
 
 export const HeaderTextAddNote = styled.Text`
@@ -16,15 +16,20 @@ export const HeaderTextAddNote = styled.Text`
   font-size: 18px;
   font-weight: bold;
   padding-left: 10px;
+  color: #e7f6f2;
+  padding-top: 10px;
 `;
 
-export const AddNoteInput = styled.TextInput`
+export const AddNoteInput = styled.TextInput.attrs((props) => ({
+  placeholderTextColor: "#e7f6f2",
+}))`
   width: 90%;
   margin: 10px 10px;
-  border-color: #080808;
+  border-color: #6b728e;
   border-radius: 5px;
   border-width: 2px;
   padding: 15px;
+  color: #e7f6f2;
 `;
 
 export const BtnContainer = styled.View`
@@ -38,14 +43,20 @@ export const BtnContainer = styled.View`
 
 export const AddNoteBtn = styled.View`
   height: 100%;
-  background-color: #90a17d;
+  background-color: #3f4e4f;
   border-radius: 15px;
   padding: 15px;
 `;
 
 export const GoBackBtn = styled.View`
   height: 100%;
-  background-color: #ffe1e1;
+  background-color: #7d6e83;
   border-radius: 15px;
   padding: 15px;
+  /* color: " #e7f6f2"; */
+`;
+
+export const BtnText = styled.Text`
+  font-size: 14px;
+  color: #e7f6f2;
 `;

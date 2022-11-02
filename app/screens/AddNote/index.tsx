@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import {
-  View,
   Text,
   KeyboardAvoidingView,
-  StyleSheet,
-  TextInput,
   TouchableOpacity,
   Alert,
 } from "react-native";
@@ -17,6 +14,7 @@ import {
   AddnoteContainer,
   AddNoteInput,
   BtnContainer,
+  BtnText,
   GoBackBtn,
   HeaderTextAddNote,
 } from "./styled";
@@ -67,13 +65,13 @@ const AddNote: React.FC<AddnoteProps> = ({ navigation }) => {
         <BtnContainer>
           <TouchableOpacity onPress={() => addNoteHandler()}>
             <AddNoteBtn>
-              <Text>Add Note</Text>
+              <BtnText>Add Note</BtnText>
             </AddNoteBtn>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.replace("AllNotes")}>
             <GoBackBtn>
-              <Text>Go Back To Home</Text>
+              <BtnText>Go Back To Home</BtnText>
             </GoBackBtn>
           </TouchableOpacity>
         </BtnContainer>

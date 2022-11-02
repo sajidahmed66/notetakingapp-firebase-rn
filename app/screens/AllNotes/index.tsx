@@ -18,6 +18,7 @@ import {
   Fab,
   HeaderText,
   NoteCard,
+  NoteCardTitle,
   TouchableTextTitle,
 } from "./styled";
 
@@ -70,14 +71,14 @@ const AllNote: React.FC<Prop> = ({ navigation }) => {
               <TouchableTextTitle
                 onPress={() => navigation.replace("ViewNote", { note })}
               >
-                <Text>{note.title}</Text>
+                <NoteCardTitle>{note.title}</NoteCardTitle>
               </TouchableTextTitle>
               <TouchableOpacity
                 onPress={() => {
                   deleteNoteHandler(note?.id);
                 }}
               >
-                <AntDesign name="delete" size={24} color="#251B37" />
+                <AntDesign name="delete" size={24} color="#e7f6f2" />
               </TouchableOpacity>
             </NoteCard>
           ))
